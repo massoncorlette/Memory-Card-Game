@@ -9,14 +9,12 @@ export async function queryForData(cardAmount) {
     console.log(error);
   }
 
-
-
 }
 
 // return Promise object
 export async function retrieveCards() {
 
-  const apiData = 'https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1'
+  const apiData = 'https://deckofcardsapi.com/api/deck/new/draw/?count=16'
 
   try {
     const data = await fetch(apiData, { mode: 'cors' });
@@ -24,8 +22,12 @@ export async function retrieveCards() {
       throw new Error('Response status: ${data.status}');
     }
     const cardData = await data.json();
-    console.log(cardData);
+    return cardData;
   } catch (error) {
     console.log(error);
   }
 };
+
+async function pullCardsFromDeck(deckID) {
+  
+}
