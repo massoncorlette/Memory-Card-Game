@@ -3,7 +3,7 @@
 export async function queryForData(cardAmount) {
   try {
     const cardDeck = await retrieveCards();
-    console.log(cardDeck);
+    return cardDeck;
 
   } catch(error) {
     console.log(error);

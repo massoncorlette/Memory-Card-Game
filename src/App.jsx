@@ -3,10 +3,18 @@ import { queryForData } from './cardApi';
 import './styles/App.css'
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    queryForData();
+    let ignore = false;
+    queryForData().then(data => {
+      if(!ignore) {
+        console.log(data);
+      }
+    });
+    return () => {
+      ignore = true;
+    };
   }, [])
 
 
