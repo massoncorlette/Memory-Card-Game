@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import { queryForData, shuffleCards } from './cardApi';
+import { queryForData } from './cardApi';
 import './styles/App.css'
 import { CardGrid } from './components/mainComponents';
 
 function App() {
-  const [cards, setCards] = useState(null);
+  const [deck, setCards] = useState(null);
 
   const [clickedCards, saveCard] = useState();
 
@@ -22,16 +22,19 @@ function App() {
   }, [clickedCards])  //perhaps use a dependency here to change deck upon win or lose
 
 
- 
-  if (cards !== null) {
-    console.log(cards);
+  if (deck !== null) {
+    console.log(deck);
   }
 
-  return (
-    <>
-      <CardGrid/>
-    </>
-  )
+  //placeholder conditional
+  if (deck !== null) {
+    return (
+      <>
+        <CardGrid cards={deck.cards}/>
+      </>
+    )
+  }
+
 }
 
 export default App

@@ -2,6 +2,7 @@
 
 https://deckofcardsapi.com/
 
+
 App()
 	will save state for deck obj(id and cards). 
 	will save state for clicked cards, saveCards should be able to pass as a prop to add to clicked cards array. Perhaps we can add a flag to pass as a prop, and set it to true if same card gets clicked twice. The flag can be useEffects dependency (to reset game and do new queryForData() api call). 
