@@ -14,7 +14,7 @@ export async function queryForData(cardAmount) {
 // return Promise object
 export async function retrieveCards() {
 
-  const apiData = 'https://deckofcardsapi.com/api/deck/new/shuffle/?cards=AH,JS,JD,JC,JH,QS,QD,QC,QH,KS,KD,KC,KH';
+  const apiData = 'https://deckofcardsapi.com/api/deck/new/shuffle/?cards=AS,AD,AC,AH,JS,JD,JC,JH,QS,QD,QC,QH,KS,KD,KC,KH';
 
   try {
     const data = await fetch(apiData, { mode: 'cors' });
