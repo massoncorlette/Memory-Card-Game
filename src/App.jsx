@@ -9,7 +9,7 @@ function App() {
     let ignore = false;
     queryForData().then(data => {
       if(!ignore) {
-        setCards(data.cards);
+        console.log(data);
       }
     });
     return () => {
@@ -17,7 +17,7 @@ function App() {
     };
   }, [])  //perhaps use a dependency here to change deck upon win or lose
 
-  console.log(cards);
+ 
 
 
   return (

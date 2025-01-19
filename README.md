@@ -2,18 +2,15 @@
 
 https://deckofcardsapi.com/
 
-using partialDeck api call to get all card suits only (13 cards total)
 
-fetch the data from cardApi
-functions.
-setState and store card deck
+retriveCards()
+	gets deckID along with card suites. (only initiate upon new game/mount) Pass api data to App component. We need deck id to pass for shuffling upon every card click
 
-function to reshuffle cards of the same deck with deck_id
-(another api call?)
+drawShuffledCards()
+	recieves all the deck cards key-value pairs using deck id. Effectively passing card data as props to display on screen. (not sure best way to store data for when user clicks on card more than once)
 
-for every user click on card, saveState for user clicked cards
-
-if same card clicked twice, game resets (new api call)
+shuffleCards()
+	used after every user click on card, so we can drawShuffledCards() as a nested function
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
