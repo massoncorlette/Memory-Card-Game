@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { queryForData, shuffleCards } from './cardApi';
 import './styles/App.css'
+import { CardGrid } from './components/mainComponents';
 
 function App() {
-  const [cards, setCards] = useState();
+  const [cards, setCards] = useState(null);
 
   const [clickedCards, saveCard] = useState();
 
@@ -18,25 +19,17 @@ function App() {
     return () => {
       ignore = true;
     };
-  }, [])  //perhaps use a dependency here to change deck upon win or lose
+  }, [clickedCards])  //perhaps use a dependency here to change deck upon win or lose
 
-  //for after every turn (shuffling cards api call)
-  useEffect(() => {
-    let ignore = false;
-    shuffleCards(cards.deck_id).then(data => {
-      if(!ignore) {
-        setCards(data);
-      }
-    });
-    return () => {
-      ignore = true;
-    };
-  },[cards.deck_id,clickedCards]);
+
  
-  console.log(cards);
+  if (cards !== null) {
+    console.log(cards);
+  }
 
   return (
     <>
+      <CardGrid/>
     </>
   )
 }

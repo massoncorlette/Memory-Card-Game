@@ -1,12 +1,24 @@
-import { queryForData } from "../cardApi"
 
-export function ReturnCardData() {
+export function CardGrid() {
 
 
   return (
-    <>
+    <div id='cardGrid'>
 
 
-    </>
+    </div>
   )
-}
+};
+
+
+function CardCell() {
+
+  return (
+    <div className="cardCell">
+    
+    
+    
+    
+    </div>
+  )
+};

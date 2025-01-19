@@ -45,19 +45,3 @@ export async function drawShuffledCards(deckID) {
   }
 };
 
-export async function shuffleCards(deckID) {
-
-  const apiData = `https://deckofcardsapi.com/api/deck/${deckID}/shuffle/`
-
-  try {
-    const data = await fetch(apiData, { mode: 'cors' });
-    if(!data.ok) {
-      throw new Error('Response status: ${data.status}');
-    }
-    const cardData = await data.json();
-    return cardData;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
