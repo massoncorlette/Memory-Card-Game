@@ -4,37 +4,33 @@ import './styles/App.css'
 import { CardGrid } from './components/mainComponents';
 
 function App() {
-  const [deck, setCards] = useState(null);
+  const [deck, setDeck] = useState(null);
 
-  const [clickedCards, saveCard] = useState();
+  const [cards, setCard] = useState();
 
   //for game reset (win or lose)
   useEffect(() => {
     let ignore = false;
     queryForData().then(data => {
-      if(!ignore) {
-        setCards(data);
+      if(!(ignore)) {
+        setDeck(data);
       }
     });
     return () => {
+      console.log("Cleanup")
       ignore = true;
     };
-  }, [clickedCards])  //perhaps use a dependency here to change deck upon win or lose
-
-
-  if (deck !== null) {
-    console.log(deck);
-  }
+  }, [])  //perhaps use a dependency here to change deck upon win or lose
 
   //placeholder conditional
   if (deck !== null) {
+    console.log(deck);
     return (
       <>
-        <CardGrid cards={deck.cards}/>
+        <CardGrid cards={deck.cards} />
       </>
     )
   }
-
 }
 
 export default App

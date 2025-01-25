@@ -2,6 +2,17 @@
 
 https://deckofcardsapi.com/
 
+ 
+ 1. Unmount and Strictmode render happens from DOMload in 
+ 2. Since deck is null, both initial renders do not pass deck prop
+ 3. Strictmode unmount will do the cleanup up 
+ 4. Strictmode remounts for re render
+ 5. First API returns with data for a re render from 6. useEffect(flag is set and is not set by setCards)
+ 7. Second API returns, flag did not set so setState saves cards to deck
+
+ 
+
+
 
 App()
 	will save state for deck obj(id and cards). 
