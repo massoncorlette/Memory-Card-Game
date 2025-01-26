@@ -20,7 +20,7 @@ function App() {
       console.log("Cleanup")
       ignore = true;
     };
-  }, []) 
+  }, [cards]) 
 
   //placeholder conditional
   if (deck !== null) {
