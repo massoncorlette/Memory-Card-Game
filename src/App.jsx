@@ -20,7 +20,7 @@ function App() {
       console.log("Cleanup")
       ignore = true;
     };
-  }, [])  //perhaps use a dependency here to change deck upon win or lose
+  }, []) 
 
   //placeholder conditional
   if (deck !== null) {
