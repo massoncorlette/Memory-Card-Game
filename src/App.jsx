@@ -27,7 +27,7 @@ function App() {
     console.log(deck);
     return (
       <>
-        <CardGrid cards={deck.cards} />
+        <CardGrid deck={deck.cards} deckID={deck.deck_id} />
       </>
     )
   }
