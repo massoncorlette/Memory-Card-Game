@@ -26,32 +26,43 @@ body {
   flex-wrap: wrap;
 }
 
-
-
 .cardContainer {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  animation-name: flip;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
 }
 
 .cardButton {
   display: flex;
-  background-color: rgb(18, 114, 18);
-
+  background-color: transparent;
+  backface-visibility: hidden;
 }
 
 .cardImage {
   height:100% ;
   width: 100%;
-  transition: transform 0.3s ease;
 }
+
+@keyframes flip {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(80deg);
+  }
+}
+
+
 
 .cardImage:hover {
   cursor: pointer;
   transform: scale(1.1); 
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
-
+  background-color: transparent;
 }
 
 

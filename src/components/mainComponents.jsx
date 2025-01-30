@@ -1,3 +1,5 @@
+import { useState,useEffect } from "react";
+
 
 export function CardGrid({deck,deckID,selectedCards,updateCards}) {
 
@@ -21,7 +23,22 @@ export function CardGrid({deck,deckID,selectedCards,updateCards}) {
 };
 
 
+
 function CardCell({card,cardImage,selectedCards,updateCards}) {
+
+  const [currentImage, setCurrentImage] = useState("https://deckofcardsapi.com/static/img/back.png");
+
+  useEffect(() => {
+    if (card !== null) {
+      setCurrentImage("https://deckofcardsapi.com/static/img/back.png"); 
+
+      const timeout = setTimeout(() => {
+        setCurrentImage(cardImage); 
+      }, 2000);
+
+      return () => clearTimeout(timeout); 
+    }
+  }, [card, cardImage]);
 
   if (card !== null) {
     return (
@@ -29,7 +46,7 @@ function CardCell({card,cardImage,selectedCards,updateCards}) {
         <button className="cardButton" onClick={() => {
           updateCards(card);
         }}>
-          <img className='cardImage' src={cardImage} />
+          <img className='cardImage' src={currentImage} />
         </button>
       </div>
     

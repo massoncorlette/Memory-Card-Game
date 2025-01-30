@@ -13,6 +13,7 @@ function App() {
     let ignore = false;
     queryForData().then(data => {
       if(!(ignore)) {
+        //timeout function here passing 
         setDeck(data);
       }
     });

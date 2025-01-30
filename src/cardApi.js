@@ -1,6 +1,6 @@
 
 // dealing with Promise object
-export async function queryForData(cardAmount) {
+export async function queryForData() {
   try {
     const cardDeck = await retrieveCards();
     return cardDeck;
