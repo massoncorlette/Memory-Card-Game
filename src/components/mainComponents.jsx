@@ -8,12 +8,12 @@ export function CardGrid({deck,deckID,selectedCards,updateCards}) {
     <div id='cardGrid'>
       <div id='gridTop'>
        {deck.slice(0,8).map((card) => {
-        return <CardCell key={card.code} cardImage={card.image}></CardCell>
+        return <CardCell key={card.code} card={card} cardImage={card.image} selectedCards={selectedCards} updateCards={updateCards}></CardCell>
        })}
       </div>
       <div id='gridBottom'>
        {deck.slice(8,16).map((card) => {
-        return <CardCell key={card.code} cardImage={card.image}></CardCell>
+        return <CardCell key={card.code} card={card} cardImage={card.image} selectedCards={selectedCards} updateCards={updateCards}></CardCell>
        })}
       </div>
     </div>
@@ -21,16 +21,19 @@ export function CardGrid({deck,deckID,selectedCards,updateCards}) {
 };
 
 
-function CardCell({cardImage}) {
+function CardCell({card,cardImage,selectedCards,updateCards}) {
 
-  console.log(cardImage);
+  if (card !== null) {
+    return (
+      <div className="cardContainer">
+        <button className="cardButton" onClick={() => {
+          updateCards(card);
+        }}>
+          <img className='cardImage' src={cardImage} />
+        </button>
+      </div>
+    
+    )
+  }
 
-  return (
-    <div className="cardContainer">
-      <button className="cardButton">
-        <img className='cardImage' src={cardImage} />
-      </button>
-    </div>
-  
-  )
 };

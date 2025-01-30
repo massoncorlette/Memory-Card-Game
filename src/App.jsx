@@ -23,13 +23,12 @@ function App() {
   }, [cards]) 
   
   const updateCards = (card) => {
-    if (cards !== null) {
-      const updatedCards = cards.map((card) => {
-        updatedCards.push(card);
-      });
-      setCard(updatedCards);
-    }
-
+    let updatedCards = [];
+    cards.map((storedCard) => {
+      updatedCards.push(storedCard);
+    });
+    updatedCards.push(card);
+    setCard(updatedCards);
   }
 
   //placeholder conditional
