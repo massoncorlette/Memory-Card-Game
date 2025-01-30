@@ -6,7 +6,7 @@ import { CardGrid } from './components/mainComponents';
 function App() {
   const [deck, setDeck] = useState(null);
 
-  const [cards, setCard] = useState(null);
+  const [cards, setCard] = useState([]);
 
   //for game reset (win or lose)
   useEffect(() => {
@@ -21,13 +21,23 @@ function App() {
       ignore = true;
     };
   }, [cards]) 
+  
+  const updateCards = (card) => {
+    if (cards !== null) {
+      const updatedCards = cards.map((card) => {
+        updatedCards.push(card);
+      });
+      setCard(updatedCards);
+    }
+
+  }
 
   //placeholder conditional
   if (deck !== null) {
     console.log(deck);
     return (
       <>
-        <CardGrid deck={deck.cards} deckID={deck.deck_id} selectedCards={cards} setCard={setCard} />
+        <CardGrid deck={deck.cards} deckID={deck.deck_id} selectedCards={cards} updateCards={updateCards} />
       </>
     )
   }

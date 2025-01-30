@@ -1,5 +1,5 @@
 
-export function CardGrid({deck,deckID,selectedCards,setCard}) {
+export function CardGrid({deck,deckID,selectedCards,updateCards}) {
 
   console.log(deck);
   console.log(deckID);
@@ -7,7 +7,6 @@ export function CardGrid({deck,deckID,selectedCards,setCard}) {
   return (
     <div id='cardGrid'>
       <div id='gridTop'>
-
        {deck.slice(0,8).map((card) => {
         return <CardCell key={card.code} cardImage={card.image}></CardCell>
        })}
