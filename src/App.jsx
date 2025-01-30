@@ -6,7 +6,7 @@ import { CardGrid } from './components/mainComponents';
 function App() {
   const [deck, setDeck] = useState(null);
 
-  const [cards, setCard] = useState();
+  const [cards, setCard] = useState(null);
 
   //for game reset (win or lose)
   useEffect(() => {
@@ -27,7 +27,7 @@ function App() {
     console.log(deck);
     return (
       <>
-        <CardGrid deck={deck.cards} deckID={deck.deck_id} />
+        <CardGrid deck={deck.cards} deckID={deck.deck_id} selectedCards={cards} setCard={setCard} />
       </>
     )
   }

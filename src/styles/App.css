@@ -1,6 +1,7 @@
 body {
   min-height: 100vh;
   margin: 0%;
+  background-color: rgb(18, 114, 18);
 }
 
 #root {
@@ -36,6 +37,8 @@ body {
 
 .cardButton {
   display: flex;
+  background-color: rgb(18, 114, 18);
+
 }
 
 .cardImage {
@@ -47,6 +50,8 @@ body {
 .cardImage:hover {
   cursor: pointer;
   transform: scale(1.1); 
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+
 }
 
 

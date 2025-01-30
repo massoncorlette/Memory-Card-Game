@@ -1,5 +1,5 @@
 
-export function CardGrid({deck,deckID}) {
+export function CardGrid({deck,deckID,selectedCards,setCard}) {
 
   console.log(deck);
   console.log(deckID);
@@ -7,24 +7,15 @@ export function CardGrid({deck,deckID}) {
   return (
     <div id='cardGrid'>
       <div id='gridTop'>
-        <CardCell cardImage={deck[0].image}></CardCell>
-        <CardCell cardImage={deck[1].image}></CardCell>
-        <CardCell cardImage={deck[2].image}></CardCell>
-        <CardCell cardImage={deck[3].image}></CardCell>
-        <CardCell cardImage={deck[4].image}></CardCell>
-        <CardCell cardImage={deck[5].image}></CardCell>
-        <CardCell cardImage={deck[6].image}></CardCell>
-        <CardCell cardImage={deck[7].image}></CardCell>
+
+       {deck.slice(0,8).map((card) => {
+        return <CardCell key={card.code} cardImage={card.image}></CardCell>
+       })}
       </div>
       <div id='gridBottom'>
-        <CardCell cardImage={deck[8].image}></CardCell>
-        <CardCell cardImage={deck[9].image}></CardCell>
-        <CardCell cardImage={deck[10].image}></CardCell>
-        <CardCell cardImage={deck[11].image}></CardCell>
-        <CardCell cardImage={deck[12].image}></CardCell>
-        <CardCell cardImage={deck[13].image}></CardCell>
-        <CardCell cardImage={deck[14].image}></CardCell>
-        <CardCell cardImage={deck[15].image}></CardCell>
+       {deck.slice(8,16).map((card) => {
+        return <CardCell key={card.code} cardImage={card.image}></CardCell>
+       })}
       </div>
     </div>
   )
