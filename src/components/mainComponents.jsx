@@ -1,6 +1,30 @@
 import { useState,useEffect } from "react";
 
 
+export function HeadingCounter({currentscore,highscore}) {
+
+
+  return (
+    <div id='headingCounterContainer'>
+      <div id='headingTxt'>
+        
+      </div>
+      <div id='counterContainer'>
+        <div>
+          <p>Current Score</p>
+          <div>{currentscore}</div>
+        </div>
+        <div>
+          <p>High Score</p>
+          <div>{highscore}</div>
+        </div>
+      </div>
+
+    </div>
+  )
+
+}
+
 export function CardGrid({deck,deckID,selectedCards,updateCards}) {
 
   console.log(deck);

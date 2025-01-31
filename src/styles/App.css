@@ -12,12 +12,22 @@ body {
   width: 100%;
 }
 
+#headingCounterContainer {
+  grid-column: 4/8;
+  grid-row: 1/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #cardGrid {
   grid-column: 2/10;
   grid-row: 3/9;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  animation-duration: 2s;
+  animation-name: font-ease;
 }
 
 #gridTop, #gridBottom {
@@ -45,6 +55,20 @@ body {
 .cardImage {
   height:100% ;
   width: 100%;
+  animation-duration: 1s;
+  animation-name: font-ease;
+}
+
+
+
+@keyframes font-ease {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
 }
 
 @keyframes flip {

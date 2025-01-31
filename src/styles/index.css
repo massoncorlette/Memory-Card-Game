@@ -1,6 +1,6 @@
-* {border: 0px solid red;}
-
+* {border: 1px solid red;}
+font
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Oswald", serif; 
 }
 
