@@ -8,7 +8,7 @@ function App() {
 
   const [cards, setCard] = useState([]);
 
-  const [userScores, setScore] = useState({currentScore:0, highScore:0});
+  const [userScores, setScore] = useState({currentScore:0, highScore:0,displayMessage:"Don't Click The Same Suite Twice!"});
 
   //for game reset (win or lose)
   useEffect(() => {
@@ -65,6 +65,12 @@ function App() {
     handleIncreaseHighScore(userScores.currentScore);
   }
 
+  if (userScores.currentScore === 16) {
+    const newMessage = {
+      userScores: [...userScores], displayMessage: "You Won! The House will payout!" 
+    };
+  }
+
 
   function checkCards(card) {
 
@@ -81,7 +87,7 @@ function App() {
     console.log(deck);
     return (
       <> 
-        <HeadingCounter currentscore={userScores.currentScore} highscore={userScores.highScore}/>
+        <HeadingCounter currentscore={userScores.currentScore} highscore={userScores.highScore} displaymessage={userScores.displayMessage}/>
         <CardGrid deck={deck.cards} deckID={deck.deck_id} selectedCards={cards} updateCards={updateCards} />
       </>
     )

@@ -1,22 +1,32 @@
 import { useState,useEffect } from "react";
+import pokerLogo from '../assets/poker-cards.png';
 
 
-export function HeadingCounter({currentscore,highscore}) {
+export function HeadingCounter({currentscore,highscore,displaymessage}) {
 
 
   return (
     <div id='headingCounterContainer'>
-      <div id='headingTxt'>
-        
-      </div>
-      <div id='counterContainer'>
-        <div>
-          <p>Current Score</p>
-          <div>{currentscore}</div>
+      <div id='headingContainer'>
+        <div id='headingTxt'>
+          Memory Deck Game
         </div>
-        <div>
-          <p>High Score</p>
-          <div>{highscore}</div>
+        <div id='logoContainer'>
+          <img src={pokerLogo} id='pokerLogo'></img>
+        </div>
+      </div>
+
+      <div id='counterContainer'>
+        <div id='displaymessage'>
+          <p>{displaymessage}</p>
+        </div>
+        <div className="scoresContainer">
+          <p>Current Score: </p>
+          <div className="scoreTxt">{currentscore}</div>
+        </div>
+        <div className="scoresContainer">
+          <p>High Score: </p>
+          <div className="scoreTxt">{highscore}</div>
         </div>
       </div>
 
